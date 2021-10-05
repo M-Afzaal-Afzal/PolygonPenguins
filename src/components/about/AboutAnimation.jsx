@@ -214,7 +214,7 @@ const About = () => {
                                         setSelectedValue(data.value);
                                         console.log(data);
                                     }}
-                                    value={dropdownOptions[0]}
+                                    value={dropdownOptions[selectedValue]}
                                     placeholder="Select an option"
                                 />
                             </div>
