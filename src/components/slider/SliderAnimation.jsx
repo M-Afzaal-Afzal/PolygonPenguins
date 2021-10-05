@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import TextLoop from "react-text-loop";
+// import TextLoop from "react-text-loop";
 
 const conctInfo = {
     phone: "",
@@ -69,11 +69,11 @@ const Slider = () => {
                                     data-aos-duration="1200"
                                     data-aos-delay="200"
                                 >
-                                    <TextLoop>
-                                        <p className="loop-text lead">NFTs</p>
-                                        <p className="loop-text lead">are serious</p>
-                                        <p className="loop-text lead">business</p>
-                                    </TextLoop>
+                                    {/*<TextLoop>*/}
+                                    {/*    <p className="loop-text lead">NFTs</p>*/}
+                                    {/*    <p className="loop-text lead">are serious</p>*/}
+                                    {/*    <p className="loop-text lead">business</p>*/}
+                                    {/*</TextLoop>*/}
                                 </div>
 
 
@@ -115,6 +115,14 @@ const Slider = () => {
                                             background: 'rgb(130, 79, 226)',
                                         }}
                                         className="px-btn px-btn-white"
+                                        onClick={() => {
+
+                                            document.getElementById('mint')
+                                                .scrollIntoView({
+                                                    behavior: 'smooth',
+                                                })
+                                        }}
+
                                         // href="img/resume.png"
                                         // download
                                     >

@@ -1,18 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import Social from "../Social";
-import Testimonials from "../testimonial/TestimonialAnimation";
+// import Testimonials from "../testimonial/TestimonialAnimation";
 import Services from "../service/ServiceAnimation";
 // import Awards from "../award/AwardsAnimation";
-import toadCycle from '../../assets/ToadCycle.mp4';
+// import toadCycle from '../../assets/ToadCycle.mp4';
 // import ReactPlayer from 'react-player'
 import '../../assets/scss/youtubeVideo.scss';
 import Collapsible from 'react-collapsible';
 import '../../assets/scss/Faq.scss';
-import YoutubeEmbed from "../YouTubeEmbed";
+// import YoutubeEmbed from "../YouTubeEmbed";
 import randomPenguins from '../../assets/randompenguins.gif';
+import '../../assets/scss/mint.scss';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 
 const About = () => {
+
+    const [selectedValue,setSelectedValue] = useState(1);
+
+    const dropdownOptions = [
+        { value: 1, label: '1 - PolygonPenguin' },
+        { value: 2, label: '2 - PolygonPenguin' },
+        { value: 3, label: '3 - PolygonPenguin' },
+        { value: 5, label: '5 - PolygonPenguin' },
+        { value: 10, label: '10 - PolygonPenguin' },
+        { value: 20, label: '20 - PolygonPenguin' },
+    ];
 
     const questions = [
         {
@@ -23,7 +37,7 @@ const About = () => {
         {
             id: 2,
             question: 'What does PolygonPenguins provide for users?',
-            ans:`PolygonPenguins triples as your NFT collectible, digital key to exclusive IGLOO access, raffles and much more!`
+            ans: `PolygonPenguins triples as your NFT collectible, digital key to exclusive IGLOO access, raffles and much more!`
         },
         {
             id: 3,
@@ -52,7 +66,7 @@ const About = () => {
                                         {/*<video autoPlay loop muted playsInline className="img-fluid">*/}
                                         {/*    <source src={toadCycle} type="video/mp4"/>*/}
                                         {/*</video>*/}
-                                        <img src={randomPenguins} alt="about image" />
+                                        <img src={randomPenguins} alt="about image"/>
                                     </div>
 
                                     <Social/>
@@ -84,7 +98,7 @@ const About = () => {
                                     {/*  todo add the faq there*/}
 
                                     {
-                                        questions.map(({question,ans,id}) => (
+                                        questions.map(({question, ans, id}) => (
                                             <Collapsible key={id} triggerTagName={'div'}
                                                          trigger={question}
                                             >
@@ -158,18 +172,73 @@ const About = () => {
                         {/* End col */}
                     </div>
 
-                    {/* separated */}
+                    {/*separated */}
 
-                    {/*<div*/}
-                    {/*    className="separated"*/}
-                    {/*    style={{*/}
-                    {/*        backgroundImage: `url(${*/}
-                    {/*            process.env.PUBLIC_URL + "img/border-dark.png"*/}
-                    {/*        })`,*/}
-                    {/*    }}*/}
-                    {/*/>*/}
+                    <div
+                        className="separated"
+                        style={{
+                            backgroundImage: `url(${
+                                process.env.PUBLIC_URL + "img/border-dark.png"
+                            })`,
+                        }}
+                    />
 
-                    {/* End separated */}
+                    {/*End separated */}
+
+                    {/* Section for mint*/}
+
+                    <div id={'mint'} className={`shadow mx-auto rounded mint-container`}>
+                        <div className={`row  align-items-center`}>
+
+                            <div className={'p-4 col-sm-12 col-md-6'}>
+                                <img className={`rounded-circle`}
+                                     src={process.env.PUBLIC_URL + "img/slider/home-banner.jpg"} alt="Penguin"/>
+                            </div>
+
+                            <div className={'p-4 col-sm-12 col-md-6'}>
+                                <h4>
+                                    PolygonPenguins Minted
+                                </h4>
+                                <button className={`my-2 btn btn-secondary`}>
+                                    182 / 8,888
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className={`p-4 row align-items-center`}>
+
+                            <div className={`col-sm-12 col-md-6 my-2`}>
+                                <Dropdown
+                                    options={dropdownOptions}
+                                    onChange={(data) => {
+                                        setSelectedValue(data.value);
+                                        console.log(data);
+                                    }}
+                                    value={dropdownOptions[0]}
+                                    placeholder="Select an option"
+                                />
+                            </div>
+
+                            <div className={`col-sm-12 col-md-6`}>
+                                <div style={{
+                                    background: '#0d6efd',
+
+                                }} className={`btn my-2 btn-success`}>
+                                    MINT A RANDOM PENGUIN
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div className={`p-4 pt-0 row`}>
+                            <h3 style={{
+                                color: 'rgb(130, 79, 226)',
+                            }}>
+                                MINT FEE : {selectedValue * 35}
+                            </h3>
+                        </div>
+
+                    </div>
 
                     {/*<div id={'videos'} className="title">*/}
                     {/*    <h3>Featured Video</h3>*/}
@@ -183,7 +252,7 @@ const About = () => {
                     {/*    /!*    width="100%"*!/*/}
                     {/*    /!*    // className="react-player"*!/*/}
                     {/*    /!*             url='https://youtu.be/N1a5SFmOglA'*!/*/}
-                        {/*/>*/}
+                    {/*/>*/}
                     {/*    <YoutubeEmbed embedId={'N1a5SFmOglA'}/>*/}
                     {/*</div>*/}
                     {/*<Awards />*/}
@@ -198,7 +267,7 @@ const About = () => {
                                 process.env.PUBLIC_URL + "img/border-dark.png"
                             })`,
                         }}
-                    ></div>
+                    />
                     {/* End separated */}
 
                     <div id={'team'} className="title">
