@@ -17,14 +17,14 @@ import 'react-dropdown/style.css';
 
 const About = () => {
 
-    const [selectedValue,setSelectedValue] = useState(1);
+    const [selectedValue,setSelectedValue] = useState({ value: 1, label: '1 - PolygonPenguin' });
 
     const dropdownOptions = [
         { value: 1, label: '1 - PolygonPenguin' },
         { value: 2, label: '2 - PolygonPenguin' },
         { value: 3, label: '3 - PolygonPenguin' },
-        { value: 5, label: '5 - PolygonPenguin' },
-        { value: 10, label: '10 - PolygonPenguin' },
+        { value: 4, label: '5 - PolygonPenguin' },
+        { value: 5, label: '10 - PolygonPenguin' },
         { value: 20, label: '20 - PolygonPenguin' },
     ];
 
@@ -211,10 +211,10 @@ const About = () => {
                                 <Dropdown
                                     options={dropdownOptions}
                                     onChange={(data) => {
-                                        setSelectedValue(data.value);
-                                        console.log(data);
+                                        setSelectedValue(data);
+                                        console.log(data,'data is there');
                                     }}
-                                    value={dropdownOptions[selectedValue]}
+                                    value={selectedValue}
                                     placeholder="Select an option"
                                 />
                             </div>
@@ -234,7 +234,7 @@ const About = () => {
                             <h3 style={{
                                 color: 'rgb(130, 79, 226)',
                             }}>
-                                MINT FEE : {selectedValue * 35}
+                                MINT FEE : {(selectedValue.value) * 35}
                             </h3>
                         </div>
 
