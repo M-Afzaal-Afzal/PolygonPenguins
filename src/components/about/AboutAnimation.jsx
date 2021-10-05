@@ -23,8 +23,8 @@ const About = () => {
         { value: 1, label: '1 - PolygonPenguin' },
         { value: 2, label: '2 - PolygonPenguin' },
         { value: 3, label: '3 - PolygonPenguin' },
-        { value: 4, label: '5 - PolygonPenguin' },
-        { value: 5, label: '10 - PolygonPenguin' },
+        { value: 5, label: '5 - PolygonPenguin' },
+        { value: 10, label: '10 - PolygonPenguin' },
         { value: 20, label: '20 - PolygonPenguin' },
     ];
 
