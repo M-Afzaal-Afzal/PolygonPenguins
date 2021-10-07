@@ -4,7 +4,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
-  FaPinterestP, FaYoutube, FaDiscord, FaHeart, FaTelegram,
+  FaPinterestP, FaYoutube, FaDiscord, FaHeart, FaTelegram, FaBookOpen,
 } from "react-icons/fa";
 
 const SocialShare = [
@@ -12,6 +12,7 @@ const SocialShare = [
   { Social: <FaTwitter />, link: "https://twitter.com/polygonpenguins" },
   { Social: <FaTelegram />, link: "https://t.me/joinchat/PWlE8m5ajK5lZDE5" },
   { Social: <FaDiscord />, link: "https://discord.gg/nJ6Qg6JF" },
+  { Social: <FaBookOpen />, link: "https://docs.polygonpenguins.com/" },
   // { Social: <FaLinkedinIn />, link: "https://twitter.com/" },
   // { Social: <FaPinterestP />, link: "https://www.pinterest.com/" },
 ];

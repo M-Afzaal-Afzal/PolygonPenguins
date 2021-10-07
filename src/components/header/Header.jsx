@@ -10,7 +10,7 @@ import {
     FiTwitter,
 } from "react-icons/fi";
 
-import {FaDiscord, FaHome, FaQuestion, FaTelegram} from 'react-icons/fa';
+import {FaBookOpen, FaDiscord, FaHome, FaQuestion, FaTelegram} from 'react-icons/fa';
 import {RiVideoLine} from 'react-icons/ri';
 
 import Logo from '../../assets/logo.svg';
@@ -42,7 +42,7 @@ const Header = () => {
       {/* End Header */}
 
       {/* nav bar */}
-      <header className={click ? "header-left menu-open" : "header-left "}>
+      <header className={click ? "header-left menu-open" : "header-left"}>
         <div className="scroll-bar">
           <div className="hl-top">
             <div className="hl-logo">
@@ -178,6 +178,27 @@ const Header = () => {
                     effect="float"
                 >
                   <span>Discord</span>
+                </ReactTooltip>
+              </a>
+            </li>
+
+            <li>
+              <a
+                  className="nav-link"
+                  rel={'noreferrer'}
+                  href="https://docs.polygonpenguins.com/"
+                  target={'_blank'}
+                  data-for="DISCORD"
+                  onClick={handleClick}
+              >
+                <FaBookOpen />
+                <ReactTooltip
+                    id="DISCORD"
+                    place="top"
+                    type="dark"
+                    effect="float"
+                >
+                  <span>Docs</span>
                 </ReactTooltip>
               </a>
             </li>

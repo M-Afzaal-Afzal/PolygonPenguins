@@ -1,5 +1,9 @@
 import React, {useState} from "react";
+import {MdClose} from "react-icons/md";
 // import TextLoop from "react-text-loop";
+import '../../components/slider/SliderAnimation.scss';
+import MetaMaskImg from '../../assets/metamask.png';
+import {FaRegQuestionCircle} from "react-icons/all";
 
 const conctInfo = {
     phone: "",
@@ -16,6 +20,12 @@ const sliderContent = {
 const Slider = () => {
 
     const [counter, setCounter] = useState(1);
+
+    const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
+    const popupHandler = () => {
+        setIsPopUpOpen(!isPopUpOpen);
+    }
 
     const counterHandler = (type) => {
         if (type === 'add' && counter < 10) {
@@ -50,8 +60,103 @@ const Slider = () => {
                 {/* End hp-top-fixed */}
 
                 <div className="container">
-                    <div className="row full-screen align-items-center">
+                    <div className="row full-screen align-items-center position-relative">
+
                         <div className="col-lg-7">
+
+                            {/* Connect to wallet button and wallet */}
+                            <div style={{
+                                top: 55,
+                                right: 0,
+                                zIndex: 555,
+                            }} className={'position-absolute d-flex flex-column align-items-end'}>
+                                <button
+                                    style={{
+                                        background: 'transparent',
+                                    }}
+                                    className="px-btn px-btn-white"
+                                    onClick={popupHandler}
+                                >
+                                    {/*Connect to metamask ({counter})*/}
+                                    Connect Wallet
+                                </button>
+
+                                <div style={{
+                                        display: 'grid',
+                                    gridTemplateRows: 'auto 1fr auto',
+                                    opacity: isPopUpOpen ? '1': 0,
+                                    transform: isPopUpOpen ? 'scale(1)' : 'scale(0)',
+                                    transition: 'all .3s linear',
+
+                                    width: '20rem',
+                                    height: '15rem',
+                                    background: '#fff',
+                                    borderRadius: '20px',
+                                }} className={'mt-2 shadow'}>
+
+                                    <div
+                                        className={' d-flex p-4 border-bottom justify-content-between align-items-center'}>
+                                        <h5 className={'m-0'}>
+                                            Connect to a Wallet
+                                        </h5>
+                                        <div className={'cross-icon'} onClick={popupHandler}>
+                                            <MdClose size={'25'}/>
+                                        </div>
+                                    </div>
+
+                                    {/* Wallets to connect*/}
+
+                                    <div className={'p-4'}>
+                                        <div style={{
+                                            background: '#EFF4F5',
+                                            borderRadius: '20px',
+                                        }} className={'py-2 px-3'}>
+
+                                            {/* Metamask wallet to connect*/}
+                                            <div style={{
+                                                cursor: 'pointer',
+                                            }} className={'d-flex justify-content-between align-items-center'}>
+                                                <h6 style={{
+                                                    color: '#3596F8',
+                                                }} className={'m-0'}>
+                                                    Metamask
+                                                </h6>
+
+                                                <div style={{
+                                                    width: '30px',
+                                                    height: '30px',
+                                                    background: '#fff',
+                                                    borderRadius: '50%',
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                }}>
+                                                    <img style={{
+                                                        width: '20px',
+                                                        height: 'auto',
+                                                        borderRadius: '50%',
+                                                    }} src={MetaMaskImg} alt="Meta Mask"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className={'p-4 border-top'}>
+                                        <h6 style={{
+                                            color: "#3596f8",
+                                            cursor: 'pointer',
+                                        }} className={'m-0 d-flex justify-content-center align-items-center'}>
+                                           <FaRegQuestionCircle style={{
+                                               marginRight: '8px',
+                                           }} color={'#3596f8'} size={'25'}/> {' '} Learn how to connect
+                                        </h6>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                             <div className="type-box">
                                 <h6 data-aos="fade-up" data-aos-duration="1200">
                                     Welcome to
@@ -138,9 +243,11 @@ const Slider = () => {
                                     data-aos-delay="300"
                                 >
                                     {/*{sliderContent.description}*/}
-                                    40% allotted for future growth for our IGLOO club activities, benefits and marketing strategies (locked in income generating farm -
-                                    <a href={'https://docs.polygonpenguins.com/penguin-holder-benefits'} style={{color: 'rgb(130, 79, 226)'}}>
-                                        {' '} Shared Farming Profits
+                                    40% allotted for future growth for our IGLOO club activities, benefits and marketing
+                                    strategies (locked in income generating farm -
+                                    <a href={'https://docs.polygonpenguins.com/penguin-holder-benefits'}
+                                       style={{color: 'rgb(130, 79, 226)'}}>
+                                        {' '} Shared Farming Profits )
                                     </a> {' '}
                                     for more
                                 </p>
@@ -152,7 +259,8 @@ const Slider = () => {
                                     data-aos-delay="300"
                                 >
                                     {/*{sliderContent.description}*/}
-                                    15% allotted for future growth for our IGLOO club activities, benefits and marketing strategies
+                                    15% allotted for future growth for our IGLOO club activities, benefits and marketing
+                                    strategies
                                 </p>
 
                                 <p
