@@ -27,6 +27,8 @@ const Slider = () => {
         setIsPopUpOpen(!isPopUpOpen);
     }
 
+
+
     const counterHandler = (type) => {
         if (type === 'add' && counter < 10) {
             setCounter((prevCounter) => prevCounter + 1);
