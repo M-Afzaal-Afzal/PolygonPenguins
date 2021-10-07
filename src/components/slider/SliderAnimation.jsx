@@ -67,7 +67,7 @@ const Slider = () => {
                             {/* Connect to wallet button and wallet */}
                             <div style={{
                                 top: 55,
-                                right: 0,
+                                right: '10px',
                                 zIndex: 555,
                             }} className={'position-absolute d-flex flex-column align-items-end'}>
                                 <button
