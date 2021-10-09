@@ -11,6 +11,7 @@ import HomeLightAnimation from "../views/all-home-version/HomeLightAnimation";
 import NotFound from "../views/NotFound";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
+import Penguin from "../views/Penguin";
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
         <Switch>
           {/*<Route exact path="/" component={Preview} />*/}
           <Route exact path="/" component={HomeLightAnimation} />
+          <Route exact path="/penguins" component={Penguin} />
           {/*<Route path="/home-light" component={HomeLight} />*/}
           {/*<Route path="/home-light-animation" component={HomeLightAnimation} />*/}
           {/*<Route*/}

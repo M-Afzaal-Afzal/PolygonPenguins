@@ -67,7 +67,7 @@ const Header = () => {
                 data-for="HOME"
                 onClick={handleClick}
               >
-                <FaHome/>
+                <FaHome size={20}/>
                 <ReactTooltip id="HOME" place="top" type="dark" effect="float">
                   <span>Home</span>
                 </ReactTooltip>
@@ -97,7 +97,7 @@ const Header = () => {
                   data-for="FAQ"
                   onClick={handleClick}
               >
-                <FaQuestion />
+                <FaQuestion size={20}/>
                 <ReactTooltip
                     id="FAQ"
                     place="top"
@@ -117,7 +117,7 @@ const Header = () => {
                   data-for="TEAM"
                   onClick={handleClick}
               >
-                <RiTeamLine />
+                <RiTeamLine size={20} />
                 <ReactTooltip id="TEAM" place="top" type="dark" effect="float">
                   <span>Team</span>
                 </ReactTooltip>
@@ -134,7 +134,7 @@ const Header = () => {
                 // data-for="BLOG"
                 // onClick={handleClick}
               >
-                <FiTwitter />
+                <FiTwitter size={20} />
                 <ReactTooltip id="TWITTER" place="top" type="dark" effect="float">
                   <span>Twitter</span>
                 </ReactTooltip>
@@ -149,7 +149,7 @@ const Header = () => {
                 data-for="DISCORD"
                 onClick={handleClick}
               >
-                <FaDiscord />
+                <FaDiscord size={20} />
                 <ReactTooltip
                   id="DISCORD"
                   place="top"
@@ -170,7 +170,7 @@ const Header = () => {
                   data-for="DISCORD"
                   onClick={handleClick}
               >
-                <FaTelegram />
+                <FaTelegram size={20} />
                 <ReactTooltip
                     id="DISCORD"
                     place="top"
@@ -189,9 +189,9 @@ const Header = () => {
                   href="https://docs.polygonpenguins.com/"
                   target={'_blank'}
                   data-for="DISCORD"
-                  onClick={handleClick}
+                  // onClick={handleClick}
               >
-                <FaBookOpen />
+                <FaBookOpen size={20} />
                 <ReactTooltip
                     id="DISCORD"
                     place="top"
@@ -201,6 +201,27 @@ const Header = () => {
                   <span>Docs</span>
                 </ReactTooltip>
               </a>
+            </li>
+
+            <li>
+              <Link
+                  className="nav-link"
+                  // rel={'noreferrer'}
+                  to="/penguins"
+                  // target={'_blank'}
+                  // data-for="DISCORD"
+                  onClick={handleClick}
+              >
+                <FaBookOpen size={20} />
+                <ReactTooltip
+                    id="DISCORD"
+                    place="top"
+                    type="dark"
+                    effect="float"
+                >
+                  <span>Docs</span>
+                </ReactTooltip>
+              </Link>
             </li>
 
           </Scrollspy>
