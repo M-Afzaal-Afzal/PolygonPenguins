@@ -1,13 +1,15 @@
 .footer {
   padding: 12px 0;
-  background: $px-dark;
+  //background: $px-dark;
+  background: $px-white;
   .theme-light & {
     background: $px-white;
     border-top: 1px solid rgba($px-dark, 0.1);
   }
   .nav {
     a {
-      color: $px-white;
+      //color: $px-white;
+      color: $px-dark;
       font-size: 14px;
       margin-right: 17px;
       .theme-light & {
